@@ -1,10 +1,30 @@
 :root {
-  --brand-900:#001e2e; --brand-800:#003a5c; --brand-600:#006aa3; --brand-500:#2aa4ff;
-  --ink-900:#0a1824; --ink-700:#2a3f52; --ink-500:#587791; --ink-300:#d3e8f7;
-  --bg:#f5faff; --card:#ffffff;
-  --cta:#1e7bd9; --cta-dark:#165fa9; --accent:#00c2ff;
-  --radius:12px; --shadow:0 10px 24px rgba(0,32,64,.08);
+  /* Ocean-inspired brand colors */
+  --brand-900: #012a36;   /* Deep ocean trench */
+  --brand-800: hsl(0, 0%, 100%);   /* Offshore blue */
+  --brand-600: #028090;   /* Tropical reef teal */
+  --brand-500: #00b4d8;   /* Shallow water blue */
+
+  /* Ink tones for text */
+  --ink-900: #022b3a;     /* Dark navy */
+  --ink-700: hsl(0, 0%, 0%);     /* Stormy sea */
+  --ink-500: #6c8a91;     /* Seafoam gray */
+  --ink-300: #cce7f0;     /* Light foam */
+
+  /* Backgrounds & surfaces */
+  --bg: #172b88;          /* Pale sky over water */
+  --card: #0a5dda;        /* Whitecaps */
+
+  /* Calls to action & accents */
+  --cta: #0077b6;         /* Ocean blue */
+  --cta-dark: #005f87;    /* Deeper blue */
+  --accent: #00e0ff;      /* Bright aqua highlight */
+
+  /* Shape & shadow */
+  --radius: 12px;
+  --shadow: 0 10px 24px #ffffff;
 }
+
 
 /* Reset */
 *{box-sizing:border-box}
@@ -22,9 +42,9 @@ img{max-width:100%;display:block}
 .brand img{height:48px;width:auto}
 .brand-text{font-weight:700;font-size:1.05rem;color:var(--brand-800)}
 nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
-nav a{color:var(--ink-700);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
-nav a:hover{color:var(--brand-800);background:#e3f4ff}
-nav a.active{color:var(--brand-800);background:#e3f4ff}
+nav a{color:var(--ink-900);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px}
+nav a:hover{color:var(--brand-800);background:#0736cf}
+nav a.active{color:var(--brand-800);background:#1908b8}
 .btn-donate{background:var(--cta);color:#fff !important;padding:10px 14px;border-radius:12px;font-weight:800;box-shadow:0 6px 14px rgba(30,123,217,.25)}
 .btn-donate:hover{background:var(--cta-dark)}
 
