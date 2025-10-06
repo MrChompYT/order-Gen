@@ -148,3 +148,15 @@ nav ul.open {
 body.menu-open {
   overflow: hidden; /* prevents background scroll when menu open */
 }
+body.is-mobile .grid-3,
+body.is-mobile .cards {
+  grid-template-columns: 1fr !important;
+}
+
+body.is-tablet .grid-3 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+body.is-desktop .grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
