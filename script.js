@@ -46,3 +46,50 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", resizeHandler);
   resizeHandler();
 });
+
+// PATTE Conservation Responsive Enhancer
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+
+  function updateLayoutClass() {
+    const width = window.innerWidth;
+    body.classList.remove("is-mobile", "is-tablet", "is-desktop");
+
+    if (width < 768) {
+      body.classList.add("is-mobile");
+    } else if (width < 1024) {
+      body.classList.add("is-tablet");
+    } else {
+      body.classList.add("is-desktop");
+    }
+  }
+
+  // Initial check + listener
+  updateLayoutClass();
+  window.addEventListener("resize", updateLayoutClass);
+
+  // Mobile nav toggle behavior
+  const navToggle = document.getElementById("nav-toggle");
+  const navMenu = document.querySelector("nav ul");
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener("change", () => {
+      navMenu.classList.toggle("open", navToggle.checked);
+      document.body.classList.toggle("menu-open", navToggle.checked);
+    });
+  }
+
+  // Smooth scrolling for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", e => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+        if (navToggle) navToggle.checked = false;
+        navMenu?.classList.remove("open");
+        document.body.classList.remove("menu-open");
+      }
+    });
+  });
+});
